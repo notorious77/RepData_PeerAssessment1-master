@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width=6, fig.height=6)
+knitr::opts_chunk$set(echo = TRUE, fig.width=6, fig.height=6, fig.path= "/figure")
 ```
 ## The Assignment
 This assignment will be described in multiple parts. You will need to write a report that answers the questions detailed below. Ultimately, you will need to complete the entire assignment in a single R markdown document that can be processed by knitr and be transformed into an HTML file.
@@ -34,6 +34,7 @@ stepsbyday <- tapply(data$steps, data$date, FUN=sum, na.rm=TRUE)
 ```
 ## Make a histogram of steps taken each day
 ```{r stepsbyday }
+library(ggplot2)
 hist(stepsbyday, breaks = 47,col = "blue",main = "Steps by Day")
 ```
 ## Mean and median number of steps taken each day
