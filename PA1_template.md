@@ -31,8 +31,10 @@ stepsbyday <- tapply(data$steps, data$date, FUN=sum, na.rm=TRUE)
 ## Make a histogram of steps taken each day
 ```{r stepsbyday}
 hist(stepsbyday, breaks = 47,col = "blue",main = "Steps by Day")
+```{r}
 # Mean and median number of steps taken each day
 mean(stepsbyday, na.rm = TRUE)
+```
 median(stepsbyday, na.rm = TRUE)
 ```
 ## Time Series
