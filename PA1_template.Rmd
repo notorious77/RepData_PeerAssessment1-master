@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.width=6, fig.height=6)
 ```
 ## The Assignment
 This assignment will be described in multiple parts. You will need to write a report that answers the questions detailed below. Ultimately, you will need to complete the entire assignment in a single R markdown document that can be processed by knitr and be transformed into an HTML file.
@@ -23,7 +23,7 @@ Fork/clone the GitHub repository created for this assignment. You will submit th
 
 NOTE: The GitHub repository also contains the dataset for the assignment so you do not have to download the data separately.
 ## Loading and preprocessing the data
-```{r activity}
+```{r activity }
 # Download the data
 temp <- tempfile()
 download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip", destfile = temp )
@@ -33,11 +33,11 @@ data <- read.csv("activity.csv")
 stepsbyday <- tapply(data$steps, data$date, FUN=sum, na.rm=TRUE)
 ```
 ## Make a histogram of steps taken each day
-```{r stepsbyday}
+```{r stepsbyday }
 hist(stepsbyday, breaks = 47,col = "blue",main = "Steps by Day")
 ```
 ## Mean and median number of steps taken each day
-```{r mean_med}
+```{r mean_med }
 mean(stepsbyday, na.rm = TRUE)
 median(stepsbyday, na.rm = TRUE)
 ```
